@@ -1,0 +1,25 @@
+<odoo noupdate="1">
+    <record id="mot_01" model="motorcycle.registry">
+        <field name="registry_number">101x1</field>
+        <field name="vin">1011</field>
+        <field name="first_name">Fluffy</field>
+        <field name="last_name">Fluffers</field>
+        <field name="register_date">'2023-02-17T11:58:44.789024+00:00'</field>
+        <field name="license_plate">4m0gus</field>
+    </record>
+    <record id="mot_02" model="motorcycle.registry">
+        <field name="registry_number">101x2</field>
+        <field name="vin">1012</field>
+        <field name="first_name">Tom</field>
+        <field name="last_name">Cruise</field>
+        <field name="picture" type="base64" file="~/Downloads/images.jpeg"/>
+        <field name="certificate_title" type="base64" file="~/Downloads/output.png"/>
+    </record>
+    <record id="mot_03" model="motorcycle.registry">
+        <field name="registry_number">101x3</field>
+        <field name="vin">1013</field>
+        <field name="first_name">Jerry</field>
+        <field name="last_name">Cat</field>
+        <field name="picture" type="base64" file="~/Downloads/images.jpeg"/>
+    </record>
+</odoo>
