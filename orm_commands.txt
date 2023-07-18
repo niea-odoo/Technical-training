@@ -1,0 +1,6 @@
+env['motorcycle.registry'].create([{'registry_number': '001A', 'vin':'x1A', 'first_name': 'John', 'last_name': 'Doe', 'current_mileage':1001}, {'registry_number': '001B', 'vin':'x1Ba', 'first_name': 'Jane', 'last_name': 'Doe', 'current_mileage':1000}])
+env['motorcycle.registry'].search_read([('current_mileage','>','1000')])
+env['motorcycle.registry'].search_read(['&',('license_plate','=',None), ('vin','!=',None)])
+env['motorcycle.registry'].search_read(['|',('license_plate','!=',None), ('vin','!=',None)])
+env['motorcycle.registry'].search(['&',('first_name', '=', 'John'), ('last_name', '=', 'Doe')]).write({'last_name':'Wick'})
+env['motorcycle.registry'].search(['&',('first_name', '=', 'Wick'), ('last_name', '=', 'Doe')]).unlink()
