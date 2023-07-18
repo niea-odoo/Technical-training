@@ -8,4 +8,13 @@
 
     'application': True, 
 
+    # MASTER DATA
+    'data': [
+        'security/mot_registry_groups.xml'
+    ],
+    # DEMO DATA
+    'demo':[
+        'demo/demo.xml',
+    ],
+
 }
