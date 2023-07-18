@@ -1,15 +1,15 @@
-from typing import Required
-from odoo import api, fields
 from odoo import models as dbstuff
 from odoo import fields as dbstuffbutsmaller
 
 class Motorcycle_registry(dbstuff.Model):
     """Registry instance for a motorcycle 
     managed or sold by the business"""
-    registry_number = fields.Char(required = True)
-    _rec_name = registry_number
-
     _name = 'motorcycle.registry'
+    _description = 'motor vehicle registry'
+
+    registry_number = dbstuffbutsmaller.Char(required = True)
+    _rec_name = 'registry_number'
+
     
 
     vin = dbstuffbutsmaller.Char(required = True)
