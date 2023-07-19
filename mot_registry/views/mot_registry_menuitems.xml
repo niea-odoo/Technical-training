@@ -16,8 +16,8 @@
               sequence="1"
               web_icon="registry,static/description/icon.png">
         <menuitem id="menu_registry_sub" name="Motorcycle Registry" sequence="1">
-            <menuitem id="menu_registry_stuff" name="Entries" sequence="2"
-            action="course_list_action"/>
+            <menuitem id="menu_registry_stuff" name="Registry" sequence="2"
+            action="registry_list_action"/>
         </menuitem>
     </menuitem>
 </odoo>
