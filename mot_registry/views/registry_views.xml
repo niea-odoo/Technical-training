@@ -27,12 +27,11 @@
                             <field name="last_name"/>
                         </group>
                     </group>
-                </sheet>
-                <notebook>
-                    <page string="Related documents">
+                    <group>
+                        <separator string="Related documents"/>
                         <field name="certificate_title"/>
-                    </page>
-                </notebook>
+                    </group>
+                </sheet>
             </form>
         </field>
     </record>

@@ -14,7 +14,7 @@
     <menuitem name="Motorcycle Registry"
               id="menu_registry"
               sequence="1"
-              web_icon="registry,static/description/icon.png">
+              web_icon="mot_registry,static/description/icon.png">
         <menuitem id="menu_registry_sub" name="Motorcycle Registry" sequence="1">
             <menuitem id="menu_registry_stuff" name="Registry" sequence="2"
             action="registry_list_action"/>
