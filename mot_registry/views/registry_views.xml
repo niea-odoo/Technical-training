@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="registry_view_form_action" model="ir.url.view">
+        <field name="name">registry.view.form</field>
+        <field name="res_model">motorcycle.registry</field>
+        <field name="view_mode">tree,form</field>
+        <field name="arch" type="xml">
+            <form string="Course View">
+                <header><field name="first_name"/><field name="last_name"/></header>
+                <field name="picture"/>
+                
+                <sheet>
+                    <group>
+                         <separator string="Registration info">
+                        <group>
+                            <field name="vin">
+                            <field name="license_plate">
+                        </group>
+                        <group>
+                            <field name="current_mileage">
+                            <field name="register_date">
+                        </group>
+                    </group>
+                </sheet>
+                <notebook>
+                    <separator string="Linked images">
+                    <group>
+                        <separator string="Certificate title">
+                        <field name="certificate_title">
+                    </group>
+                </notebook>
+        </field>
+    </record>
+</odoo>

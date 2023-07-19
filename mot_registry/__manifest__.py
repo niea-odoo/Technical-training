@@ -13,6 +13,7 @@
         'security/mot_registry_groups.xml',
         'security/ir.model.access.csv',
         'views/mot_registry_menuitems.xml',
+        'views/registry_views.xml',
     ],
     # DEMO DATA
     'demo':[
