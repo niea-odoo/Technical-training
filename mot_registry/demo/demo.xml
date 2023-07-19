@@ -6,12 +6,17 @@
         <field name="first_name">Fluffy</field>
         <field name="last_name">Fluffers</field>
         <field name="license_plate">4m0gus</field>
+        <field name="register_date">2023-07-11 09:12:23</field>
+        <field name="picture" type="base64" file="mot_registry/static/img/registration.jpeg"/>
+        <field name="certificate_title" type="base64" file="mot_registry/static/img/lorem-ipsum.pdf"/>
     </record>
     <record id="mot_02" model="motorcycle.registry">
         <field name="registry_number">101x2</field>
         <field name="vin">1012</field>
         <field name="first_name">Tom</field>
         <field name="last_name">Cruise</field>
+        <field name="register_date">2023-07-11 09:12:23</field>
+        <field name="picture" type="base64" file="mot_registry/static/img/doo.png"/>
     </record>
     <record id="mot_03" model="motorcycle.registry">
         <field name="registry_number">101x3</field>
