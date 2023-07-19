@@ -12,7 +12,6 @@
     'data': [
         'security/mot_registry_groups.xml',
         'security/ir.model.access.csv',
-        'security/mot_registry_security.xml',
     ],
     # DEMO DATA
     'demo':[
