@@ -11,11 +11,12 @@
                 </header>
                 
                 <sheet>
-                    <field class="oe_avatar" name="picture"/>
+                    <field class="oe_avatar" name="picture" widget="image"/>
                     <h1 string="Registration info"/>
                     <group>
                         <group>
                             <separator string="Identification"/>
+                            <field name="registry_number"/>
                             <field name="vin"/>
                             <field name="license_plate"/>
                         </group>
@@ -34,4 +35,19 @@
             </form>
         </field>
     </record>
+
+   <record id="registry_view_list" model="ir.ui.view">
+        <field name="name">registry.view.list</field>
+        <field name="model">motorcycle.registry</field>
+        <field name="arch" type="xml">
+            <tree string="Registry List">
+                <field name="registry_number"/>
+                <field name="vin"/>
+                <field name="license_plate"/>
+                <field name="first_name"/>
+                <field name="last_name"/>
+            </tree>
+        </field>
+    </record>
+
 </odoo>
