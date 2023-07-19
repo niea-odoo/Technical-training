@@ -7,7 +7,8 @@ class Motorcycle_registry(dbstuff.Model):
     _name = 'motorcycle.registry'
     _description = 'motor vehicle registry'
 
-    registry_number = dbstuffbutsmaller.Char(required = True)
+    registry_number = dbstuffbutsmaller.Char(required = True, 
+                                             default=lambda self:self.env['ir.sequence'].next_by_code('motorcycle.registry.number'))
     _rec_name = 'registry_number'
 
     
