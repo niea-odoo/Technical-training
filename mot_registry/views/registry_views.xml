@@ -9,9 +9,9 @@
                     <h1><field name="first_name"/></h1>
                     <h1><field name="last_name"/></h1>
                 </header>
-                <field name="picture"/>
                 
                 <sheet>
+                    <field class="oe_avatar" name="picture"/>
                     <h1 string="Registration info"/>
                     <group>
                         <group>
@@ -27,11 +27,9 @@
                     </group>
                 </sheet>
                 <notebook>
-                    <separator string="Linked images"/>
-                    <group>
-                        <separator string="Certificate title"/>
+                    <page string="Certificate title">
                         <field name="certificate_title"/>
-                    </group>
+                    </page>
                 </notebook>
             </form>
         </field>
