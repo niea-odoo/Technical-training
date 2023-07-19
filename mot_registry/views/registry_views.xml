@@ -1,34 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record id="registry_view_form_action" model="ir.url.view">
+    <record id="registry_view_form_action" model="ir.ui.view">
         <field name="name">registry.view.form</field>
-        <field name="res_model">motorcycle.registry</field>
-        <field name="view_mode">tree,form</field>
+        <field name="model">motorcycle.registry</field>
         <field name="arch" type="xml">
             <form string="Course View">
-                <header><field name="first_name"/><field name="last_name"/></header>
+                <header>
+                    <h1><field name="first_name"/></h1>
+                    <h1><field name="last_name"/></h1>
+                </header>
                 <field name="picture"/>
                 
                 <sheet>
+                    <h1 string="Registration info"/>
                     <group>
-                         <separator string="Registration info">
                         <group>
-                            <field name="vin">
-                            <field name="license_plate">
+                            <separator string="Identification"/>
+                            <field name="vin"/>
+                            <field name="license_plate"/>
                         </group>
                         <group>
-                            <field name="current_mileage">
-                            <field name="register_date">
+                            <separator string="Miscellaneous"/>
+                            <field name="current_mileage"/>
+                            <field name="register_date"/>
                         </group>
                     </group>
                 </sheet>
                 <notebook>
-                    <separator string="Linked images">
+                    <separator string="Linked images"/>
                     <group>
-                        <separator string="Certificate title">
-                        <field name="certificate_title">
+                        <separator string="Certificate title"/>
+                        <field name="certificate_title"/>
                     </group>
                 </notebook>
+            </form>
         </field>
     </record>
 </odoo>
