@@ -34,9 +34,9 @@ class Motorcycle_registry(dbstuff.Model):
 
     @api.constrains('license_plate')
     def _check_license_plate(self):
-        pattern = r'^[A-Z]{4}[0-9]{2}(?:[A-Z]{2}|[0-9]{2})[0-9]{6}$'
+        pattern = r'^[A-Z](?:[A-Z]{3}|[A-Z]{2}|[A-Z]?)[0-9][0-9]?[A-Z]?[A-Z]?$'
         for motorcycle_registry in self:
-            #{2A}{2A}{2}({2A}||{2}){6}
+            #({1A}{2A}{3A}{4A})({2}|{1})({2A}|{})
             if( re.match(pattern , motorcycle_registry.license_plate) ):
                 continue
             else:
@@ -44,9 +44,9 @@ class Motorcycle_registry(dbstuff.Model):
 
     @api.constrains('vin')
     def _check_vin(self):
-        pattern = r'^[A-Z](?:[A-Z]{3}|[A-Z]{2}|[A-Z]?)[0-9][0-9]?[A-Z]?[A-Z]?$'
+        pattern = r'^[A-Z]{4}[0-9]{2}(?:[A-Z]{2}|[0-9]{2})[0-9]{6}$'
         for motorcycle_registry in self:
-            #({1A}{2A}{3A}{4A})({2}|{1})({2A}|{})
+            #{2A}{2A}{2}({2A}||{2}){6}
             if( re.match(pattern , motorcycle_registry.vin) ):
                 continue
             else:

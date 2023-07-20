@@ -2,29 +2,29 @@
 <odoo noupdate="1">
     <record id="mot_01" model="motorcycle.registry">
         <field name="registry_number">101x1</field>
-        <field name="vin">AM00GU</field>
+        <field name="vin">AMOG00SO798765</field>
         <field name="first_name">Fluffy</field>
         <field name="last_name">Fluffers</field>
-        <field name="license_plate">AMOG00SO798765</field>
+        <field name="license_plate">AM00GU</field>
         <field name="register_date">2023-07-11 09:12:23</field>
         <field name="picture" type="base64" file="mot_registry/static/img/registration.jpeg"/>
         <field name="certificate_title" type="base64" file="mot_registry/static/img/lorem-ipsum.pdf"/>
     </record>
     <record id="mot_02" model="motorcycle.registry">
         <field name="registry_number">101x2</field>
-        <field name="vin">F14</field>
+        <field name="vin">MMIF0070666666</field>
         <field name="first_name">Tom</field>
         <field name="last_name">Cruise</field>
-        <field name="license_plate">MMIF0070666666</field>
+        <field name="license_plate">F14</field>
         <field name="register_date">2023-07-11 09:12:23</field>
         <field name="picture" type="base64" file="mot_registry/static/img/doo.png"/>
     </record>
     <record id="mot_03" model="motorcycle.registry">
         <field name="registry_number">101x3</field>
-        <field name="vin">YF35FX</field>
+        <field name="vin">ODOO57MX123456</field>
         <field name="first_name">Jerry</field>
         <field name="last_name">Cat</field>
-        <field name="license_plate">ODOO57MX123456</field>
+        <field name="license_plate">YF35FX</field>
         <field name="current_mileage">34.5</field>
     </record>
 </odoo>
