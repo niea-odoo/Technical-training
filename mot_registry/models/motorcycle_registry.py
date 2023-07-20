@@ -31,7 +31,7 @@ class Motorcycle_registry(dbstuff.Model):
 
     @api.constrains('license_plate')
     def _check_license_plate(self):
-        pattern = r'^[A-Z]{2}[A-Z]{2}[0-9]{2}(?:[A-Z]{2}|[0-9]{2})[0-9]{6}$'
+        pattern = r'^[A-Z]{4}[0-9]{2}(?:[A-Z]{2}|[0-9]{2})[0-9]{6}$'
         for motorcycle_registry in self:
             #{2A}{2A}{2}({2A}||{2}){6}
             if( re.match(pattern , motorcycle_registry.license_plate) ):
