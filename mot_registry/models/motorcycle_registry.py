@@ -22,14 +22,18 @@ class Motorcycle_registry(dbstuff.Model):
     certificate_title = dbstuffbutsmaller.Binary()
     register_date = dbstuffbutsmaller.Date()
 
-    #Constrained fields
+    # Constrained fields
     vin = dbstuffbutsmaller.Char(required = True)
     license_plate = dbstuffbutsmaller.Char()
 
-    #Computed fields
+    # Computed fields
     make = dbstuffbutsmaller.Char(compute='compute_make_field_values')
     model = dbstuffbutsmaller.Char(compute='compute_model_field_values')
     year = dbstuffbutsmaller.Date(compute='compute_year_field_values')
+    
+    # Related fields
+    email=dbstuffbutsmaller.Char(related='partner_id.email')
+    phone=dbstuffbutsmaller.Char(related='partner_id.phone')
 
 
     @api.constrains('license_plate')
@@ -54,8 +58,22 @@ class Motorcycle_registry(dbstuff.Model):
 
     @api.depends('vin')
     def compute_make_field_values(self,):
-        return
+        for record in self:
+            if record.license_plate == None:
+                continue
+            else:
+                record.nake = record.license_plate[:2]
+
     def compute_model_field_values(self,):
-        return
+        for record in self:
+            if record.license_plate == None:
+                continue
+            else:
+                record.nake = record.license_plate[2:4]
+
     def compute_year_field_values(self,):
-        return
+        for record in self:
+            if record.license_plate == None:
+                continue
+            else:
+                record.nake = record.license_plate[4:6]

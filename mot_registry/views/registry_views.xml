@@ -6,8 +6,7 @@
         <field name="arch" type="xml">
             <form string="Course View">
                 <header>
-                    <h1><field name="first_name"/></h1>
-                    <h1><field name="last_name"/></h1>
+                    <h1><field name="partner_id"/></h1>
                 </header>
                 
                 <sheet>
@@ -23,8 +22,9 @@
                         </group>
                         <group>
                             <separator string="Owner Information"/>
-                            <field name="first_name"/>
-                            <field name="last_name"/>
+                            <field name="partner_id" string="Owner"/>
+                            <field name="phone"/>
+                            <field name="email"/>
                         </group>
                     </group>
                     <group>
@@ -44,8 +44,7 @@
                 <field name="registry_number"/>
                 <field name="vin"/>
                 <field name="license_plate"/>
-                <field name="first_name"/>
-                <field name="last_name"/>
+                <field name="partner_id"/>
             </tree>
         </field>
     </record>
@@ -57,7 +56,7 @@
             <search>
                 <field name="registry_number"/>
                 <field name="vin"/>
-                <field name="last_name"/>
+                <field name="partner_id"/>
                 <field name="license_plate"/>
             </search>
         </field>
