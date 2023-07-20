@@ -14,20 +14,23 @@ class Motorcycle_registry(dbstuff.Model):
                                              default=lambda self:self.env['ir.sequence'].next_by_code('motorcycle.registry.number'))
     _rec_name = 'registry_number'
 
-    
-
-    vin = dbstuffbutsmaller.Char(required = True)
-    first_name = dbstuffbutsmaller.Char(required = True)
-    last_name = dbstuffbutsmaller.Char(required=True)
-    license_plate = dbstuffbutsmaller.Char()
+    partner_id = dbstuffbutsmaller.Many2one(comodel_name='res.partner',
+                                            string='Owner')
 
     picture = dbstuffbutsmaller.Image()
-
     current_mileage = dbstuffbutsmaller.Float()
-
     certificate_title = dbstuffbutsmaller.Binary()
-
     register_date = dbstuffbutsmaller.Date()
+
+    #Constrained fields
+    vin = dbstuffbutsmaller.Char(required = True)
+    license_plate = dbstuffbutsmaller.Char()
+
+    #Computed fields
+    make = dbstuffbutsmaller.Char(compute='compute_make_field_values')
+    model = dbstuffbutsmaller.Char(compute='compute_model_field_values')
+    year = dbstuffbutsmaller.Date(compute='compute_year_field_values')
+
 
     @api.constrains('license_plate')
     def _check_license_plate(self):
@@ -48,3 +51,11 @@ class Motorcycle_registry(dbstuff.Model):
                 continue
             else:
                 raise ValidationError("VIN must conform to defined rules")
+
+    @api.depends('vin')
+    def compute_make_field_values(self,):
+        return
+    def compute_model_field_values(self,):
+        return
+    def compute_year_field_values(self,):
+        return
