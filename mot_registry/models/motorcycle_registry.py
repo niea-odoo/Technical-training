@@ -12,6 +12,10 @@ class Motorcycle_registry(dbstuff.Model):
     _inherit = 'product.template'
     detailed_type = dbstuffbutsmaller.Selection(selection_add=[ 
         ('motorcycle', 'Motorcycle')], ondelete={'motorcycle': 'set consu'})
+    route_ids = dbstuffbutsmaller.Many2many(
+        'stock.route', 'stock_route_motorcycle', 'registry_number', 'route_id', 'Routes',
+        domain=[('product_selectable', '=', True)],
+        help="Depending on the modules installed, this will allow you to define the route of the product: whether it will be bought, manufactured, replenished on order, etc.")
 
     # Fields
     _name = 'motorcycle.registry'
@@ -30,6 +34,7 @@ class Motorcycle_registry(dbstuff.Model):
     register_date = dbstuffbutsmaller.Date()
 
     _sql_constraints = [
+        ('mot_registry_number_uniq', 'unique (registry_number)', 'This registry number has already been assigned'),
         ('mot_registry_vin_uniq', 'unique (vin)', 'The VIN already exists!')
     ]
 
