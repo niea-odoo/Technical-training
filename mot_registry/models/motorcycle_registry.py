@@ -7,19 +7,7 @@ import re
 class Motorcycle_registry(dbstuff.Model):
     """Registry instance for a motorcycle 
     managed or sold by the business"""
-
-    # Inheritance stuff
-    _inherits = {'product.template':'detailed_type',}
-    #_inherit = 'product.template'
-    detailed_type = dbstuffbutsmaller.Selection(selection_add=[ 
-        ('motorcycle', 'Motorcycle')], ondelete={'motorcycle': 'set consu'})
-    '''
-        route_ids = dbstuffbutsmaller.Many2many(
-            'stock.route', 'stock_route_motorcycle', 'registry_number', 'route_id', 'Routes',
-            domain=[('product_selectable', '=', True)],
-            help="Depending on the modules installed, this will allow you to define the route of the product: whether it will be bought, manufactured, replenished on order, etc.")
-    '''
-        
+    
     # Fields
     _name = 'motorcycle.registry'
     _description = 'motor vehicle registry'
