@@ -7,6 +7,13 @@ import re
 class Motorcycle_registry(dbstuff.Model):
     """Registry instance for a motorcycle 
     managed or sold by the business"""
+
+    # Inheritance stuff
+    _inherit = 'product.template'
+    detailed_type = dbstuffbutsmaller.Selection(selection_add=[ 
+        ('motorcycle', 'Motorcycle')], ondelete={'motorcycle': 'set consu'})
+
+    # Fields
     _name = 'motorcycle.registry'
     _description = 'motor vehicle registry'
 
