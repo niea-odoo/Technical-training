@@ -22,6 +22,10 @@ class Motorcycle_registry(dbstuff.Model):
     certificate_title = dbstuffbutsmaller.Binary()
     register_date = dbstuffbutsmaller.Date()
 
+    _sql_constraints = [
+        ('mot_registry_vin_uniq', 'unique (vin)', 'The VIN already exists!')
+    ]
+
     # Constrained fields
     vin = dbstuffbutsmaller.Char(required = True)
     license_plate = dbstuffbutsmaller.Char()
