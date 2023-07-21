@@ -16,6 +16,7 @@
         'views/mot_registry_menuitems.xml',
         'views/registry_views.xml',
         'views/product_views.xml',
+        'views/mot_registry_web_templates.xml',
     ],
     # DEMO DATA
     'demo':[

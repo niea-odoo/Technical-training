@@ -1,10 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data>
-        <template>
-            <t t-call="website.layout">
-                <t t-set="title">Stuff</t>
-            </t>
-        </template>
-    </data>
+    <template id="website">
+        <t t-call="website.layout">
+            <t t-set="title">Catalog</t>
+            <div class="oe_structure">
+                <div class="container">
+                    <t t-foreach="motorcycles" t-as="motorcycle">
+                        <h3 t-field="product_template.model"/>
+                        <l1>
+                            <span t-field="motorcycle.horsepower"/>
+                            <span t-field="motorcycle.horsepower"/>
+                            <span t-field="motorcycle.top_speed"/>
+                            <span t-field="motorcycle.torque"/>
+                            <span t-field="motorcycle.battery_capacity"/>
+                            <span t-field="motorcycle.charge_time"/>
+                            <span t-field="motorcycle.range"/>
+                            <span t-field="motorcycle.curb_weight"/>
+                        </l1>
+                    </t>
+                </div>
+            </div>
+        </t>
+    </template>
+    <template id="motorcycle_website">
+        <t t-call="website.layout">
+            <t t-set="title">Motorcycle</t>
+            <div class="oe_structure">
+                <div class="container">
+                    <h3 t-field="product_template.model"/>
+                    <l1>
+                        <span t-field="product_template.horsepower"/>
+                        <span t-field="product_template.horsepower"/>
+                        <span t-field="product_template.top_speed"/>
+                        <span t-field="product_template.torque"/>
+                        <span t-field="product_template.battery_capacity"/>
+                        <span t-field="product_template.charge_time"/>
+                        <span t-field="product_template.range"/>
+                        <span t-field="product_template.curb_weight"/>
+                    </l1>
+                </div>
+            </div>
+        </t>
+    </template>
 </odoo>
