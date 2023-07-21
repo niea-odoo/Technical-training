@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template>
+            <t t-call="website.layout">
+                <t t-set="title">Stuff</t>
+            </t>
+        </template>
+    </data>
+</odoo>
