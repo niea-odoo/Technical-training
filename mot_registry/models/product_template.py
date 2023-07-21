@@ -3,12 +3,23 @@ from odoo import fields as dbstuffbutsmaller
 
 class ProductTemplate(dbstuff.Model):
     _inherit = 'product.template'
-    detailed_type = dbstuffbutsmaller.Selection(selection_add=[ 
-        ('product', 'Motorcycle')], ondelete={'motorcycle': 'set product'})
+    detailed_type = dbstuffbutsmaller.Selection(selection_add=[
+        ('motorcycle', 'Motorcycle'),
+    ], ondelete={'motorcycle': 'set product'})
     
     type = dbstuffbutsmaller.Selection(selection_add=[
-        ('product', 'Motorcycle')
+        ('product', 'motorcycle')
     ], ondelete={'motorcycle': 'set consu'})
+
+    horsepower = dbstuffbutsmaller.Float()
+    top_speed = dbstuffbutsmaller.Float()
+    torque = dbstuffbutsmaller.Float()
+    battery_capacity = dbstuffbutsmaller.Float()
+    charge_time = dbstuffbutsmaller.Float()
+    range = dbstuffbutsmaller.Float()
+    curb_weight = dbstuffbutsmaller.Float()
+    make = dbstuffbutsmaller.Char()
+    model = dbstuffbutsmaller.Char()
 
 ''' Bad code, here for sentimental reasons
 # Inheritance stuff
