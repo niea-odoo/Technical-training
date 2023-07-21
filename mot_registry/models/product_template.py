@@ -8,8 +8,11 @@ class ProductTemplate(dbstuff.Model):
     ], ondelete={'motorcycle': 'set product'})
     
     type = dbstuffbutsmaller.Selection(selection_add=[
-        ('product', 'motorcycle')
+        ('motorcycle', 'motorcycle')
     ], ondelete={'motorcycle': 'set consu'})
+
+    def _detailed_type_mapping(self):
+        return {'motorcycle':'product',}
 
     horsepower = dbstuffbutsmaller.Float()
     top_speed = dbstuffbutsmaller.Float()
@@ -20,6 +23,8 @@ class ProductTemplate(dbstuff.Model):
     curb_weight = dbstuffbutsmaller.Float()
     make = dbstuffbutsmaller.Char()
     model = dbstuffbutsmaller.Char()
+    year = dbstuffbutsmaller.Integer()
+    launch_date = dbstuffbutsmaller.Date()
 
 ''' Bad code, here for sentimental reasons
 # Inheritance stuff

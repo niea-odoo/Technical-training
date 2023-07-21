@@ -15,6 +15,7 @@
         'data/motorcycle_registry_data.xml',
         'views/mot_registry_menuitems.xml',
         'views/registry_views.xml',
+        'views/product_views.xml',
     ],
     # DEMO DATA
     'demo':[
