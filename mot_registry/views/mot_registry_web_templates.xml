@@ -3,42 +3,45 @@
     <template id="website">
         <t t-call="website.layout">
             <t t-set="title">Catalog</t>
-            <div class="oe_structure">
-                <div class="container">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm">
+                        <div class="card">
+                            <strong class="list-group-item o_default_snippet_text">Specs</strong>
+                            <div class="card-body">
+                                <strong class="list-group-item o_default_snippet_text">Horsepower</strong>
+                                <strong class="list-group-item o_default_snippet_text">Top Speed</strong>
+                                <strong class="list-group-item o_default_snippet_text">Torque</strong>
+                                <strong class="list-group-item o_default_snippet_text">Battery Capacity</strong>
+                                <strong class="list-group-item o_default_snippet_text">Charge Time</strong>
+                                <strong class="list-group-item o_default_snippet_text">Range</strong>
+                                <strong class="list-group-item o_default_snippet_text">Curb Weight</strong>                                </div>
+                        </div>
+                    </div>
                     <t t-foreach="motorcycles" t-as="motorcycle">
-                        <h3 t-field="product_template.model"/>
-                        <l1>
-                            <span t-field="motorcycle.horsepower"/>
-                            <span t-field="motorcycle.horsepower"/>
-                            <span t-field="motorcycle.top_speed"/>
-                            <span t-field="motorcycle.torque"/>
-                            <span t-field="motorcycle.battery_capacity"/>
-                            <span t-field="motorcycle.charge_time"/>
-                            <span t-field="motorcycle.range"/>
-                            <span t-field="motorcycle.curb_weight"/>
-                        </l1>
+                        <div class="col-sm">
+                            <div class="card">
+                                <strong>
+                                    <t t-out="motorcycle.name"/>
+                                </strong>
+                                <div class="card-body">
+                                    <p class="list-group-item o_default_snippet_text" t-field="motorcycle.horsepower"/>
+                                    <p class="list-group-item o_default_snippet_text" t-field="motorcycle.top_speed"/>
+                                    <p class="list-group-item o_default_snippet_text" t-field="motorcycle.torque"/>
+                                    <p class="list-group-item o_default_snippet_text" t-field="motorcycle.battery_capacity"/>
+                                    <p class="list-group-item o_default_snippet_text" t-field="motorcycle.charge_time"/>
+                                    <p class="list-group-item o_default_snippet_text" t-field="motorcycle.range"/>
+                                    <p class="list-group-item o_default_snippet_text" t-field="motorcycle.curb_weight"/>
+                                </div>
+                            </div>
+                        </div>
                     </t>
                 </div>
             </div>
-        </t>
-    </template>
-    <template id="motorcycle_website">
-        <t t-call="website.layout">
-            <t t-set="title">Motorcycle</t>
-            <div class="oe_structure">
-                <div class="container">
-                    <h3 t-field="product_template.model"/>
-                    <l1>
-                        <span t-field="product_template.horsepower"/>
-                        <span t-field="product_template.horsepower"/>
-                        <span t-field="product_template.top_speed"/>
-                        <span t-field="product_template.torque"/>
-                        <span t-field="product_template.battery_capacity"/>
-                        <span t-field="product_template.charge_time"/>
-                        <span t-field="product_template.range"/>
-                        <span t-field="product_template.curb_weight"/>
-                    </l1>
-                </div>
+            <div class="container">
+            <t t-foreach="motorcycles" t-as="motorcycle">
+                <img t-if="motorcycle.image_1920 != None" t-att-src="motorcycle.image_1920" widget="image" class="oe_avatar"/>
+            </t>
             </div>
         </t>
     </template>
