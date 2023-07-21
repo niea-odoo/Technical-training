@@ -1,9 +1,9 @@
-from odoo import models
-from odoo import fields
+from odoo import models as dbstuff
+from odoo import fields as dbstuffbutsmaller
 
-class ProductTemplate(models.Model):
+class ProductTemplate(dbstuff.Model):
     _inherit = 'product.template'
-    detailed_type = fields.Selection(selection_add=[
+    detailed_type = dbstuffbutsmaller.Selection(selection_add=[
         ('motorcycle', 'Motorcycle'),
     ], ondelete={'motorcycle': 'set product'})
 
