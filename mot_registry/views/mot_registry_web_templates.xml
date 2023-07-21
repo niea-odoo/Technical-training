@@ -32,16 +32,12 @@
                                     <p class="list-group-item o_default_snippet_text" t-field="motorcycle.charge_time"/>
                                     <p class="list-group-item o_default_snippet_text" t-field="motorcycle.range"/>
                                     <p class="list-group-item o_default_snippet_text" t-field="motorcycle.curb_weight"/>
+                                    <img t-if="motorcycle.image_1920" t-att-src="image_data_uri(motorcycle.image_256)"/>
                                 </div>
                             </div>
                         </div>
                     </t>
                 </div>
-            </div>
-            <div class="container">
-            <t t-foreach="motorcycles" t-as="motorcycle">
-                <img t-if="motorcycle.image_1920 != None" t-att-src="motorcycle.image_1920" widget="image" class="oe_avatar"/>
-            </t>
             </div>
         </t>
     </template>
